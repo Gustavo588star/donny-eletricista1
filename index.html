@@ -4,110 +4,508 @@
 <meta charset="UTF-8" />
 <meta name="google-site-verification" content="zkUTazLm95py-dk89XhqxA_qxhiEwecGpwjFNjFCIQc" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<title>Donny Amaral | Eletricista</title>
+<title>Donny Amaral | Eletricista em Pinhalzinho/SP</title>
+<meta name="description" content="Donny Amaral Eletricista em Pinhalzinho/SP. Mais de 35 anos de experiência em padrões, disjuntores, instalações elétricas, iluminação, manutenção residencial e comercial." />
 
 <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
 body {
-    margin:0;
-    font-family: Arial;
-    background: linear-gradient(180deg,#07111f,#0b1728,#050b14);
-    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+      radial-gradient(circle at top, rgba(29,107,255,.22), transparent 34%),
+      linear-gradient(180deg, #07111f 0%, #0b1728 45%, #050b14 100%);
+    color: #f3f6fb;
+    line-height: 1.6;
 }
 
-header {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 30px;
-    background:#071428;
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+
+.container {
+    width: min(1180px, 92%);
+    margin: 0 auto;
 }
 
-.logo {
-    display:flex;
-    align-items:center;
-    gap:10px;
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(12px);
+    background: rgba(6,12,22,.84);
+    border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
-.logo img {
-    width:55px;
-    border-radius:10px;
+.topbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    padding: 14px 0;
+    flex-wrap: wrap;
 }
 
-nav {
-    display:flex;
-    gap:20px;
-    align-items:center;
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 800;
 }
 
-.whatsapp {
-    background:orange;
-    padding:10px 20px;
-    border-radius:20px;
-    color:black;
+.brand img {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.28);
 }
 
-.hero {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:60px 30px;
+.brand small {
+    color: #b8cae3;
+    display: block;
+    font-weight: 600;
 }
 
-.hero-text {
-    max-width:600px;
+.nav {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.hero h1 {
-    font-size:50px;
+.nav a {
+    color: #dbe8ff;
+    font-size: .95rem;
 }
 
-.hero img {
-    width:350px;
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 22px;
+    border-radius: 999px;
+    font-weight: 700;
+    transition: .25s ease;
+    border: 1px solid transparent;
 }
 
-@media (max-width:768px){
-    .hero{
-        flex-direction:column;
-        text-align:center;
+.btn-primary {
+    background: linear-gradient(90deg, #ffb400, #ff8700);
+    color: #09111d;
+    box-shadow: 0 12px 30px rgba(255,166,0,.25);
+}
+
+.btn-primary:hover { transform: translateY(-2px); }
+
+.btn-outline {
+    background: rgba(255,255,255,.04);
+    border-color: rgba(255,255,255,.16);
+    color: #f5f8ff;
+}
+
+.btn-outline:hover { background: rgba(255,255,255,.08); }
+
+.hero { padding: 82px 0 46px; }
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.12fr .88fr;
+    gap: 36px;
+    align-items: center;
+}
+
+.tag {
+    display: inline-block;
+    margin-bottom: 18px;
+    background: rgba(28,122,255,.15);
+    border: 1px solid rgba(86,155,255,.35);
+    color: #a7ccff;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: .92rem;
+}
+
+h1 {
+    font-size: clamp(2.35rem, 5vw, 4.7rem);
+    line-height: 1.05;
+    margin-bottom: 18px;
+    font-weight: 900;
+}
+
+.hero p {
+    color: #c7d5ea;
+    font-size: 1.08rem;
+    max-width: 680px;
+    margin-bottom: 24px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 26px;
+}
+
+.highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.highlight-card, .card, .contact-card, .about-box {
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 24px;
+    box-shadow: 0 14px 35px rgba(0,0,0,.20);
+}
+
+.highlight-card { padding: 18px; }
+
+.highlight-card strong {
+    display: block;
+    font-size: 1.45rem;
+    color: #ffbf24;
+    margin-bottom: 4px;
+}
+
+.hero-logo {
+    padding: 28px;
+    border-radius: 34px;
+    background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+    border: 1px solid rgba(255,255,255,.08);
+    box-shadow: 0 22px 48px rgba(0,0,0,.28);
+    text-align: center;
+}
+
+.hero-logo img {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    filter: drop-shadow(0 18px 42px rgba(0,0,0,.35));
+}
+
+section { padding: 42px 0; }
+
+.section-title {
+    font-size: clamp(1.8rem, 3vw, 2.7rem);
+    margin-bottom: 12px;
+    font-weight: 900;
+}
+
+.section-sub {
+    color: #bfd0e6;
+    max-width: 760px;
+    margin-bottom: 24px;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.card {
+    padding: 24px;
+    transition: .25s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255,181,22,.45);
+}
+
+.icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+    margin-bottom: 14px;
+    background: linear-gradient(135deg, rgba(255,191,36,.22), rgba(39,124,255,.20));
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 1.18rem;
+}
+
+.card p {
+    color: #c7d5ea;
+    font-size: .97rem;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    align-items: stretch;
+}
+
+.about-box { padding: 26px; }
+
+.about-box ul {
+    padding-left: 20px;
+    color: #d7e3f5;
+}
+
+.about-box li { margin-bottom: 8px; }
+
+.cta {
+    margin: 28px 0 8px;
+    padding: 34px;
+    border-radius: 32px;
+    background: linear-gradient(135deg, rgba(255,180,0,.18), rgba(19,89,214,.22));
+    border: 1px solid rgba(255,255,255,.10);
+    box-shadow: 0 18px 42px rgba(0,0,0,.18);
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    margin-bottom: 12px;
+}
+
+.cta p {
+    color: #d4e0f2;
+    max-width: 760px;
+    margin: 0 auto 18px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.contact-card { padding: 24px; }
+
+.contact-card h3 { margin-bottom: 12px; }
+
+.contact-card p, .contact-card li {
+    color: #d2def0;
+}
+
+.contact-card ul { padding-left: 18px; }
+
+footer {
+    padding: 28px 0 40px;
+    color: #aebfd8;
+    border-top: 1px solid rgba(255,255,255,.08);
+    margin-top: 28px;
+}
+
+.mini {
+    font-size: .95rem;
+    color: #abc0dc;
+}
+
+@media (max-width: 980px) {
+    .hero-grid, .about-grid, .contact-grid, .services {
+        grid-template-columns: 1fr 1fr;
     }
-
-    header{
-        flex-direction:column;
+    .highlights {
+        grid-template-columns: 1fr;
     }
+}
+
+@media (max-width: 700px) {
+    .hero-grid, .about-grid, .contact-grid, .services {
+        grid-template-columns: 1fr;
+    }
+    .nav { display: none; }
+    h1 { font-size: 2.4rem; }
+    .hero { padding-top: 56px; }
 }
 </style>
 </head>
-
 <body>
 
-<header>
-    <div class="logo">
-        <img src="logo.png.png">
-        <div>
-            <strong>Donny Amaral</strong><br>
-            <small>Eletricista • +35 anos</small>
-        </div>
-    </div>
+<header class="topbar">
+    <div class="container">
+        <a class="brand" href="#inicio">
+            <img src="logo.png.png" alt="Logo Donny Amaral">
+            <div>
+                Donny Amaral
+                <small>Eletricista • Mais de 35 anos de experiência</small>
+            </div>
+        </a>
 
-    <nav>
-        <a href="#">Serviços</a>
-        <a href="#">Sobre</a>
-        <a href="#">Contato</a>
-        <a class="whatsapp" href="https://wa.me/5511971734860">WhatsApp</a>
-    </nav>
+        <nav class="nav">
+            <a href="#servicos">Serviços</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+            <a class="btn btn-primary" href="https://wa.me/5511971734860" target="_blank">WhatsApp</a>
+        </nav>
+    </div>
 </header>
 
-<section class="hero">
-    <div class="hero-text">
-        <h1>
-            Serviços elétricos completos para sua casa,
-            comércio e muito mais.
-        </h1>
-    </div>
+<main id="inicio">
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <span class="tag">Atendimento com confiança, agilidade e experiência</span>
+                <h1>Serviços elétricos completos para sua casa, comércio e muito mais.</h1>
+                <p>
+                    Donny Amaral atua com qualidade, responsabilidade e experiência em serviços elétricos residenciais e comerciais,
+                    oferecendo soluções seguras em instalações, manutenção, padrões de energia, disjuntores, iluminação e muito mais.
+                </p>
 
-    <img src="logo.png.png">
-</section>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="https://wa.me/5511971734860" target="_blank">Pedir orçamento</a>
+                    <a class="btn btn-outline" href="tel:+5511971734860">Ligar agora</a>
+                </div>
+
+                <div class="highlights">
+                    <div class="highlight-card">
+                        <strong>+35 anos</strong>
+                        <span>de experiência no ramo</span>
+                    </div>
+                    <div class="highlight-card">
+                        <strong>Atendimento</strong>
+                        <span>residencial e comercial</span>
+                    </div>
+                    <div class="highlight-card">
+                        <strong>Agilidade</strong>
+                        <span>e compromisso no serviço</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-logo">
+                <img src="logo.png.png" alt="Donny Amaral Eletricista">
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos">
+        <div class="container">
+            <h2 class="section-title">Serviços realizados</h2>
+            <p class="section-sub">
+                Atendimento com serviço completo em diferentes necessidades elétricas, sempre com foco em segurança,
+                acabamento e bom funcionamento.
+            </p>
+
+            <div class="services">
+                <div class="card">
+                    <div class="icon">⚡</div>
+                    <h3>Padrões de energia</h3>
+                    <p>Montagem, adequação e instalação de padrões com atenção às exigências e ao funcionamento seguro da rede elétrica.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">🔌</div>
+                    <h3>Disjuntor e quadro elétrico</h3>
+                    <p>Troca, manutenção e organização de quadros e disjuntores para maior proteção e melhor distribuição da energia.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">💡</div>
+                    <h3>Iluminação</h3>
+                    <p>Instalação e manutenção de iluminação interna e externa para casas, comércios, áreas de lazer e fachadas.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">🏠</div>
+                    <h3>Instalações residenciais</h3>
+                    <p>Serviços elétricos completos para residências, incluindo tomadas, chuveiros, ventiladores, fiação e ajustes gerais.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">🏢</div>
+                    <h3>Instalações comerciais</h3>
+                    <p>Atendimento para comércios e pequenos negócios com manutenção, ampliação de pontos e organização elétrica.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">🛠️</div>
+                    <h3>Manutenção e reparos</h3>
+                    <p>Correção de falhas, revisão de circuitos, troca de componentes e suporte para problemas elétricos do dia a dia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <div class="container">
+            <h2 class="section-title">Experiência que transmite confiança</h2>
+            <p class="section-sub">
+                Um serviço elétrico bem feito precisa unir técnica, responsabilidade e atenção aos detalhes. É isso que faz a diferença no resultado final.
+            </p>
+
+            <div class="about-grid">
+                <div class="about-box">
+                    <h3 style="margin-bottom: 12px;">Por que escolher Donny?</h3>
+                    <ul>
+                        <li>Mais de 35 anos de experiência na área</li>
+                        <li>Atendimento com seriedade e compromisso</li>
+                        <li>Serviço limpo, organizado e bem executado</li>
+                        <li>Experiência em instalações residenciais e comerciais</li>
+                        <li>Agilidade para orçamento e atendimento</li>
+                        <li>Foco em segurança e qualidade</li>
+                    </ul>
+                </div>
+
+                <div class="about-box">
+                    <h3 style="margin-bottom: 12px;">Atendimento completo</h3>
+                    <p>
+                        Seja para uma instalação nova, uma manutenção urgente, troca de disjuntor, padrão de energia,
+                        revisão de iluminação ou ajustes em comércio e residência, o objetivo é entregar um serviço confiável,
+                        seguro e duradouro.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cta">
+                <h2>Precisa de um eletricista de confiança?</h2>
+                <p>
+                    Entre em contato agora mesmo para pedir seu orçamento e tirar dúvidas sobre o serviço.
+                    Atendimento com experiência, responsabilidade e qualidade.
+                </p>
+                <div class="hero-actions" style="justify-content:center;">
+                    <a class="btn btn-primary" href="https://wa.me/5511971734860" target="_blank">Pedir orçamento</a>
+                    <a class="btn btn-outline" href="tel:+5511971734860">Ligar agora</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato">
+        <div class="container">
+            <h2 class="section-title">Contato</h2>
+            <p class="section-sub">Fale agora para orçamento, informações e atendimento.</p>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Informações</h3>
+                    <p><strong>Telefone:</strong> (11) 97173-4860</p>
+                    <p><strong>WhatsApp:</strong> (11) 97173-4860</p>
+                    <p><strong>Endereço:</strong> Avenida da Saudade, 391 - Pinhalzinho/SP</p>
+                </div>
+
+                <div class="contact-card">
+                    <h3>Atendimento</h3>
+                    <ul>
+                        <li>Serviços residenciais</li>
+                        <li>Serviços comerciais</li>
+                        <li>Orçamentos rápidos</li>
+                        <li>Manutenção e instalações</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p><strong>Donny Amaral Eletricista</strong></p>
+        <p class="mini">Pinhalzinho/SP • Atendimento com confiança, agilidade e experiência.</p>
+    </div>
+</footer>
 
 </body>
 </html>
