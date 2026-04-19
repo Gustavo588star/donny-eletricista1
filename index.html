@@ -4,65 +4,103 @@
 <meta charset="UTF-8">
 <meta name="google-site-verification" content="zkUTazLm95py-dk89XhqxA_qxhiEwecGpwjFNjFCIQc" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Donny Amaral Eletricista</title>
 
 <style>
 body {
-    font-family: Arial;
     margin: 0;
-    background: #0f172a;
+    font-family: Arial, sans-serif;
+    background: #0b1b35;
     color: white;
-    text-align: center;
 }
 
+/* HEADER */
 header {
-    background: linear-gradient(90deg, #facc15, #f59e0b);
-    padding: 25px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #071428;
 }
 
-header img {
-    width: 220px;
-    max-width: 90%;
-    margin-bottom: 10px;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-header p {
-    color: black;
+.logo img {
+    width: 50px;
+    border-radius: 10px;
+}
+
+.logo-text {
     font-weight: bold;
 }
 
-section {
-    padding: 25px 15px;
+nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }
 
-h2 {
-    color: #facc15;
-}
-
-.btn {
-    background: #22c55e;
-    padding: 15px 20px;
-    display: inline-block;
+nav a {
     color: white;
     text-decoration: none;
-    border-radius: 10px;
-    margin-top: 15px;
-    font-size: 18px;
 }
 
-.btn:hover {
-    background: #16a34a;
+.whatsapp {
+    background: orange;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: white;
 }
 
-/* 🔥 melhora no celular */
-@media (max-width: 600px) {
-    header img {
-        width: 180px;
+/* HERO */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 30px;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.badge {
+    background: #1e3a8a;
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin: 0;
+}
+
+.hero img {
+    width: 350px;
+    max-width: 100%;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
     }
 
-    .btn {
-        width: 90%;
-        font-size: 20px;
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 10px;
     }
 }
 </style>
@@ -71,22 +109,33 @@ h2 {
 <body>
 
 <header>
-    <img src="logo.png.png" alt="Logo Donny Amaral">
-    <p>Eletricista há mais de 35 anos</p>
+    <div class="logo">
+        <img src="logo.png.png">
+        <div class="logo-text">
+            Donny Amaral<br>
+            <small>Eletricista • +35 anos</small>
+        </div>
+    </div>
+
+    <nav>
+        <a href="#">Serviços</a>
+        <a href="#">Sobre</a>
+        <a href="#">Contato</a>
+        <a class="whatsapp" href="https://wa.me/5511971734860">WhatsApp</a>
+    </nav>
 </header>
 
-<section>
-    <h2>Serviços</h2>
-    <p>
-        Instalação elétrica, padrão de energia, troca de disjuntores,
-        manutenção residencial e elétrica completa.
-    </p>
+<section class="hero">
+    <div class="hero-text">
+        <div class="badge">Atendimento com confiança, agilidade e experiência</div>
 
-    <h2>Contato</h2>
-    <p>📞 (11) 97173-4860</p>
-    <p>📍 Av. da Saudade, 391 - Pinhalzinho SP</p>
+        <h1>
+            Serviços elétricos completos para sua casa,
+            comércio e muito mais.
+        </h1>
+    </div>
 
-    <a class="btn" href="https://wa.me/5511971734860">📲 Chamar no WhatsApp</a>
+    <img src="logo.png.png">
 </section>
 
 </body>
